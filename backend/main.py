@@ -1,22 +1,4 @@
-# from fastapi import FastAPI
-# from fastapi.middleware.cors import CORSMiddleware
-# from routes import thing_desc, heartbeat
-
-# app = FastAPI()
-
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["http://localhost:5173", "http://localhost:3000"],
-#     allow_methods=["*"],
-#     allow_headers=["*"]
-# )
-
-# app.include_router(thing_desc.router)
-# app.include_router(heartbeat.router)
-
-
 import random
-import asyncio
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -35,13 +17,11 @@ app.add_middleware(
 randBMP = 60
 pulse_active = True
 
-def get_next_heart_rate(current_bpm: int) -> int:
-    nxt = current_bpm + random.randint(0, 14) - random.randint(0, 7)
-    if nxt < 50:
-        nxt += random.randint(0, 29)
-    elif nxt > 200:
-        nxt -= random.randint(0, 29)
-    return nxt
+def get_next_heart_rate(randBMP: int) -> int:
+    randBMP += random.randint(-5, 10)
+    randBMP = max(50, min(randBMP, 200))
+
+    return randBMP
 
 @app.get("/")
 async def root():
@@ -90,8 +70,8 @@ def heartbeat():
 @app.get("/recommend")
 def recommend(bpm: int):
     g = Graph()
-    g.parse("/app/data/music.ttl", format="turtle")
-    g.parse("/app/data/music_data.ttl", format="turtle")
+    g.parse("../data/music.ttl", format="turtle")
+    g.parse("../data/music_data.ttl", format="turtle")
     bucket = round(bpm / 10) * 10
     q = f'''
     PREFIX music: <http://localhost:3000/#>

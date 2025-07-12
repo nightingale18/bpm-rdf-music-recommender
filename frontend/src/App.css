@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+/* .hero-bg {
+  background: url("/bg.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  padding: 20px;
+} */
