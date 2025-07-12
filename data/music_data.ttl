@@ -1,0 +1,46 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix music: <http://localhost:3000/#> .
+@prefix schema: <http://schema.org/>.
+@prefix : <http://localhost:3000/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Song1 rdf:type music:Rock;
+                 music:suggestedRate "50"^^xsd:integer, "170"^^xsd:integer;
+                 schema:encodingFormat "audio/m4a";
+                 rdf:seeAlso <http://localhost:3000/songs/Rock-Queen-The_Show_Must_Go_On.m4a>.
+
+:Song2 rdf:type music:Pop;
+                 music:suggestedRate "60"^^xsd:integer, "180"^^xsd:integer, "190"^^xsd:integer;
+                 schema:encodingFormat "audio/m4a";
+                 rdf:seeAlso <http://localhost:3000/songs/Pop-Sia-Chandelier.m4a>.
+
+:Song3 rdf:type music:HipHop;
+                 music:suggestedRate "70"^^xsd:integer, "160"^^xsd:integer, "200"^^xsd:integer;
+                 schema:encodingFormat "audio/m4a";
+                 rdf:seeAlso <http://localhost:3000/songs/HipHop-Coolio-Gangsta's_Paradise_(feat__L_V_).m4a>.
+
+:Song4 rdf:type music:Jazz;
+                 music:suggestedRate "100"^^xsd:integer, "120"^^xsd:integer;
+                 schema:encodingFormat "audio/m4a";
+                 rdf:seeAlso <http://localhost:3000/songs/Jazz-Adam_Lambert-Feeling_Good.m4a>.
+
+:Song5 rdf:type music:Soul;
+                music:suggestedRate "80"^^xsd:integer, "140"^^xsd:integer;
+                schema:encodingFormat "audio/m4a";
+                rdf:seeAlso <http://localhost:3000/songs/Soul-Adele-Skyfall.m4a>.
+
+:Song6 rdf:type music:Classical;
+                 music:suggestedRate "70"^^xsd:integer, "110"^^xsd:integer;
+                 schema:encodingFormat "audio/m4a";
+                 rdf:seeAlso <http://localhost:3000/songs/Classical-Secret_Garden_-_Song_From_A_Secret_Garden.m4a>.
+
+:Song7 rdf:type music:HeavyMetal;
+                 music:suggestedRate "40"^^xsd:integer, "90"^^xsd:integer;
+                 schema:encodingFormat "audio/m4a";
+                 rdf:seeAlso <http://localhost:3000/songs/HeavyMetal-Rammstein-Mutter.m4a>.
+
+:Song8 rdf:type music:Lounge;
+                 music:suggestedRate "130"^^xsd:integer, "150"^^xsd:integer;
+                 schema:encodingFormat "audio/mp3";
+                 rdf:seeAlso <http://localhost:3000/songs/Lounge-Unkown-All_I_Need.mp3>.

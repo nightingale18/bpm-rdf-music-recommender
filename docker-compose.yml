@@ -1,0 +1,31 @@
+services:
+  # 1. FastAPI backend
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+
+  # 2. React frontend
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:3001  
+    depends_on:
+      - backend
+
+  # 3. Solid Community Server
+  solid:
+    image: solidproject/community-server:latest
+
+    command: >
+      -c @css:config/file.json
+      -f /data
+    ports:
+      - "3000:3000"          # default HTTPS port
+    volumes:
+      - ./data:/data        # your RDF data folder

@@ -1,0 +1,64 @@
+@prefix music: <http://localhost:3000/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<http://localhost:3000/> dct:author "Yuliia" ;
+              dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+              dct:title "The Music Ontology"@en ;
+              vann:preferredNamespacePrefix "music" ;
+              vann:preferredNamespaceUri "http://localhost:3000/" ;
+              rdf:type owl:Ontology ;
+              rdfs:comment "This is an Ontology to describe Music and various genres";
+              owl:versionInfo "0.0.1" .
+
+music:MusicGenre rdf:type rdfs:Class, owl:Class;
+        rdfs:comment "The Class used to describe all music genres.".
+
+music:Rock rdf:type rdfs:Class, owl:Class;
+            rdfs:comment "The Class used to describe Rock music.";
+            rdfs:label "Rock";
+            rdfs:subClassOf music:MusicGenre.
+
+music:Pop rdf:type rdfs:Class, owl:Class;
+            rdfs:comment "The Class used to describe Pop music.";
+            rdfs:label "Pop";
+            rdfs:subClassOf music:MusicGenre.
+
+music:HipHop rdf:type rdfs:Class, owl:Class;
+            rdfs:comment "The Class used to describe HipHop music.";
+            rdfs:label "HipHop";
+            rdfs:subClassOf music:MusicGenre.
+
+music:Jazz rdf:type rdfs:Class, owl:Class;
+            rdfs:comment "The Class used to describe Jazz music.";
+            rdfs:label "Jazz";
+            rdfs:subClassOf music:MusicGenre.
+
+music:Soul rdf:type rdfs:Class, owl:Class;
+            rdfs:comment "The Class used to describe Soul music.";
+            rdfs:label "Soul";
+            rdfs:subClassOf music:MusicGenre.
+
+music:Classical rdf:type rdfs:Class, owl:Class;
+            rdfs:comment "The Class used to describe Classical music.";
+            rdfs:label "Classical";
+            rdfs:subClassOf music:MusicGenre.
+
+music:HeavyMetal rdf:type rdfs:Class, owl:Class;
+            rdfs:comment "The Class used to describe HeavyMetal music.";
+            rdfs:label "HeavyMetal";
+            rdfs:subClassOf music:MusicGenre.
+
+music:Lounge rdf:type rdfs:Class, owl:Class;
+            rdfs:comment "The Class used to describe Lounge music.";
+            rdfs:label "Lounge";
+            rdfs:subClassOf music:MusicGenre.
+
+
+music:sugguestedRate rdf:type owl:DatatypeProperty;
+                    schema:rangeIncludes xsd:integer.
