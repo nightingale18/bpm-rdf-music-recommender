@@ -30,14 +30,14 @@ jobs:
         with:
           context: ./backend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bpm-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/bpm-backend:latest
 
       - name: Build & push frontend
         uses: docker/build-push-action@v5
         with:
           context: ./frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bpm-frontend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/bpm-frontend:latest
 
       # Optional: publish as multi-service Compose bundle
       - name: Push compose spec (optional)
